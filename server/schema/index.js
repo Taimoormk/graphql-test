@@ -16,8 +16,9 @@ const schema = buildSchema(`
     email: String!
   }
   type Query {
-    item: HackerNewsItem,
+    item: HackerNewsItem
     user: User
+    users: [User]
   }
   input UserInput {
     id: ID!

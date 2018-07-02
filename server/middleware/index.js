@@ -31,6 +31,9 @@ module.exports = app => {
         email: "johndoe@gmail.com"
       };
     },
+    users: () => {
+      return users;
+    },
     createUser: ({ input }) => {
       user = input;
       users.push(user);
