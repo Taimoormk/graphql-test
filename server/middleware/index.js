@@ -9,6 +9,10 @@ module.exports = app => {
   app.use(morgan("dev"));
   app.use(express.static(path.join(__dirname, "../../dist")));
   app.use(bodyParser.json());
+
+  const users = [];
+  let user = {};
+
   const root = {
     item: () => {
       return {
@@ -24,15 +28,13 @@ module.exports = app => {
       return {
         firstName: "John",
         lastName: "Doe",
-        emails: [
-          {
-            email: "johndoe@gmail.com"
-          },
-          {
-            email: "john@gmail.com"
-          }
-        ]
+        email: "johndoe@gmail.com"
       };
+    },
+    createUser: ({ input }) => {
+      user = input;
+      users.push(user);
+      return user;
     }
   };
   app.use(
