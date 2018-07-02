@@ -19,6 +19,20 @@ module.exports = app => {
         title: "GraphQL learning",
         deleted: false
       };
+    },
+    user: () => {
+      return {
+        firstName: "John",
+        lastName: "Doe",
+        emails: [
+          {
+            email: "johndoe@gmail.com"
+          },
+          {
+            email: "john@gmail.com"
+          }
+        ]
+      };
     }
   };
   app.use(
